@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | MSQ Enterprise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-msqDark bg-gray-50">
+    <div class="cursor-dot"></div><div class="cursor-outline"></div>
+
+   <!-- Header -->
+   <header class="fixed w-full z-50 glass-nav transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm" id="navbar">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Left: Logo -->
+        <a href="index.html">
+            <img src="images/logo.jpg" alt="MSQ Enterprise" class="h-12 w-auto object-contain">
+        </a>
+
+        <!-- Center: Nav with Underline Animation -->
+        <nav class="hidden md:flex space-x-8">
+            <!-- Nav Link 1 -->
+            <a href="index.html" class="nav-link relative group text-msqDark font-medium hover:text-msqBlue transition-colors">
+                Home
+                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-msqBlue transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <!-- Nav Link 2 -->
+            <a href="products.html" class="nav-link relative group text-msqDark font-medium hover:text-msqBlue transition-colors">
+                Products
+                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-msqBlue transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <!-- Nav Link 3 -->
+            <a href="about.html" class="nav-link relative group text-msqBlue font-medium hover:text-msqBlue transition-colors">
+                About Us
+                <span class="absolute left-0 bottom-0 w-full h-0.5 bg-msqBlue transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <!-- Nav Link 4 -->
+            <a href="contact.html" class="nav-link relative group text-msqDark font-medium hover:text-msqBlue transition-colors">
+                Contact Us
+                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-msqBlue transition-all duration-300 group-hover:w-full"></span>
+            </a>
+        </nav>
+
+        <!-- Right: Contact & Icons -->
+        <div class="hidden md:flex items-center">
+        
+            <a href="mailto:idea.msq@gmail.com" class="flex items-center gap-2 text-sm font-semibold text-msqBlue transition mr-8">
+                <i class="fas fa-envelope text-lg"></i>
+                idea.msq@gmail.com
+            </a>
+
+            <!-- Social Icons -->
+            <div class="flex space-x-4 text-msqGray">
+                <a href="#" class="hover:text-blue-600 hover:scale-110 transition-transform"><i class="fab fa-facebook-f text-lg"></i></a>
+                <a href="#" class="hover:text-pink-600 hover:scale-110 transition-transform"><i class="fab fa-instagram text-lg"></i></a>
+                <a href="#" class="hover:text-blue-800 hover:scale-110 transition-transform"><i class="fab fa-linkedin-in text-lg"></i></a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Icon -->
+        <button class="md:hidden text-msqBlue text-2xl hover:scale-110 transition">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+    <!-- Main Content Wrapper -->
+    <main class="pt-32 pb-20">
+        
+        <!-- Header Section -->
+        <div class="container mx-auto px-6 md:px-12 text-center mb-16">
+            <h4 class="text-msqBlue font-bold uppercase tracking-widest mb-3 text-sm">Who We Are</h4>
+            <h2 class="text-4xl md:text-5xl font-bold text-msqBlack">Driving Excellence in Manufacturing</h2>
+            <p class="mt-4 text-msqDark max-w-2xl mx-auto">At MSQ Enterprise, we combine precision engineering with quality materials to deliver the best solutions in Pharma, Medical, and Textile industries.</p>
+        </div>
+
+        <!-- VISION & MISSION SECTION -->
+        <section class="container mx-auto px-6 md:px-12 mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- Vision Card -->
+                <div class="bg-white p-10 rounded-2xl shadow-lg border-t-4 border-msqBlue hover:shadow-2xl transition-shadow duration-300 group">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-msqBlue transition-colors duration-300">
+                        <i class="fas fa-eye text-2xl text-msqBlue group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-msqBlue mb-4">Our Vision</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        To become the leading manufacturer in the plastic industry by setting global standards for quality, innovation, and sustainability. We envision a future where MSQ Enterprise is synonymous with reliability and trust across pharmaceutical and textile sectors.
+                    </p>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="bg-white p-10 rounded-2xl shadow-lg border-t-4 border-msqBlue hover:shadow-2xl transition-shadow duration-300 group">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-6 group-hover:bg-msqBlue transition-colors duration-300">
+                        <i class="fas fa-bullseye text-2xl text-msqDark group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-msqBlue mb-4">Our Mission</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our mission is to deliver high-quality, durable, and cost-effective plastic solutions that empower our clients' businesses. We are committed to continuous improvement, advanced technology, and customer satisfaction, ensuring every product meets rigorous safety standards.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+       <!-- CHAIRMAN'S NOTE SECTION -->
+    <section class="container mx-auto px-6 md:px-12">
+        <!-- Added 'text-center', 'max-w-5xl', 'mx-auto' for centering the whole box -->
+        <div class="bg-white rounded-3xl shadow-xl p-10 md:p-16 text-center relative max-w-5xl mx-auto border border-gray-100">
+            
+            <!-- Decorative Icon (Background) -->
+            <i class="fas fa-quote-right absolute top-4 right-6 md:top-10 md:right-10 text-6xl text-gray-100 -z-0 opacity-50"></i>
+            
+            <!-- Heading -->
+            <h2 class="text-3xl md:text-4xl font-bold text-msqBlue mb-6 relative z-10 inline-block">
+                Chairman's Note
+                <!-- Small underline decoration -->
+                <span class="block h-1 w-24 bg-msqBlue mx-auto mt-2 rounded-full opacity-50"></span>
+            </h2>
+            
+            <!-- Text Content (Centered with max-width) -->
+            <div class="space-y-6 text-msqDark relative z-10 leading-relaxed text-lg md:text-xl max-w-3xl mx-auto">
+                <p>
+                    "Welcome to MSQ Enterprise. Since our inception, our goal has been simple: to provide products that our customers can rely on blindly. In an industry where precision matters, we do not compromise."
+                </p>
+                <p>
+                    "We believe that true success lies in the success of our partners. Whether it is a small textile clip or a critical pharmaceutical bottle, every piece we manufacture carries our promise of quality. We look forward to building a sustainable future together."
+                </p>
+            </div>
+
+            <!-- Signature Section -->
+            <div class="mt-10 relative z-10">
+                <p class="text-5xl text-msqBlue opacity-80" style="font-family: 'cursive', serif;">M.S.Q</p>
+                <p class="text-sm text-gray-400 mt-2 font-bold tracking-widest uppercase">Chairman & Founder</p>
+            </div>
+
+        </div>
+    </section>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

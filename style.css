@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* GLOBAL & TRANSITIONS */
+body {
+    font-family: 'Poppins', sans-serif;
+    cursor: none; 
+    overflow-x: hidden;
+    /* Page Transition Setup */
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+/* CUSTOM CURSOR */
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 10000; /* Highest priority */
+    pointer-events: none;
+}
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: black;
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+body.hovering .cursor-outline {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(22, 60, 109, 0.1);
+    border-color: transparent;
+}
+
+
+
+
+.animate-on-load {
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+.animate-on-load.loaded {
+    opacity: 1;
+}
+
+/* 2. Slash Overlay Logic (CRITICAL FIXES HERE) */
+.slash-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    pointer-events: none;
+    z-index: 9999; /* Must be higher than Navbar */
+}
+
+.slash-panel {
+    position: absolute;
+    top: -10%; 
+    height: 120%; /* Taller to cover skew gaps */
+    width: 50%;
+    background-color: #163c6d;
+    transform: skewX(-15deg); 
+    display: none; /* Hidden by default, GSAP enables it */
+    z-index: 9999;
+}
+
+/* Initial Off-screen positions */
+#slash-left { left: -60%; }
+#slash-right { right: -60%; }
+
+
+/* BUTTONS */
+.btn-primary {
+    background-color: #163c6d;
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(22, 60, 109, 0.3);
+    display: inline-block;
+}
+.btn-primary:hover {
+    background-color: #0f2b50;
+    transform: translateY(-2px);
+}
+.btn-outline {
+    border: 2px solid #163c6d;
+    color: #163c6d;
+    padding: 1rem 2.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-block;
+}
+.btn-outline:hover {
+    background-color: #163c6d;
+    color: white;
+}
+
+/* PRODUCT FLIP CARDS */
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 480px; 
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.flip-card-front {
+    background-color: white;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    border: 1px solid #f0f0f0;
+}
+.flip-card-back {
+    background-color: #163c6d;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 2.5rem;
+    justify-content: center;
+    align-items: center;
+}
+.icon-wrapper {
+    height: 180px;
+    width: 100%;
+    background: #f8fafc;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon-wrapper i {
+    font-size: 5rem;
+    color: #a1a2b4;
+    transition: transform 0.3s;
+}
+.flip-card:hover .icon-wrapper i {
+    transform: scale(1.1);
+}
+.spec-list {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.spec-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.9rem;
+}
+.btn-small-white {
+    background: white;
+    color: #163c6d;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+.btn-small-white:hover {
+    background: #e2e8f0;
+}
+.hover-hint {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #a1a2b4;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s;
+}
+.flip-card:hover .hover-hint {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Sidebar active link styling */
+.category-link.active {
+    color: #163c6d;
+    background-color: #f3f4f6;
+    border-right: 4px solid #163c6d;
+}
+
+ /* --- PRODUCT IMG SLIDER --- */
+ .auto-slider {
+    position: relative;
+    width: 100%;
+    height: 150px; 
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.auto-slider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    /* Total time 6 seconds 3 seconds per image */
+    animation: fadeSlideTwo 6s infinite ease-in-out; 
+}
+
+/* Image 1 starts immediately */
+.auto-slider img:nth-child(1) { 
+    animation-delay: 0s; 
+}
+
+/* Image 2 starts after 3 seconds */
+.auto-slider img:nth-child(2) { 
+    animation-delay: 3s; 
+}
+
+/* Keyframes for 2 Images Logic */
+@keyframes fadeSlideTwo {
+    0% { opacity: 0; }
+    5% { opacity: 1; }    
+    45% { opacity: 1; }   
+    50% { opacity: 0; }   
+    100% { opacity: 0; }  
+}
+
+/* ABOUT & FEATURES */
+.feature-box {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    font-weight: 600;
+    color: #535456;
+    display: flex;
+    align-items: center;
+}
+
+/* CONTACT */
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #535456;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e5e7eb;
+    background: white;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #163c6d;
+    box-shadow: 0 0 0 4px rgba(22, 60, 109, 0.05);
+}
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 1rem;
+    transition: 0.3s;
+}
+.contact-card:hover {
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.contact-card .icon {
+    width: 45px;
+    height: 45px;
+    background: #eef2ff;
+    color: #163c6d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* FOOTER */
+.social-btn {
+    width: 40px;
+    height: 40px;
+    background: #163c6d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.social-btn:hover {
+    background: #163c6d;
+}
+
+/* UTILS */
+.animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+}

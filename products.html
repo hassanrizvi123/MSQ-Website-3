@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | MSQ Enterprise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">    
+</head>
+<body class="text-msqDark bg-gray-50">
+    <div class="cursor-dot"></div><div class="cursor-outline"></div>
+
+    <!-- Header -->
+   <header class="fixed w-full z-50 glass-nav transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm" id="navbar">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <!-- Left: Logo -->
+        <a href="index.html">
+            <img src="images/logo.jpg" alt="MSQ Enterprise" class="h-12 w-auto object-contain">
+        </a>
+
+        <!-- Center: Nav with Underline Animation -->
+        <nav class="hidden md:flex space-x-8">
+            <!-- Nav Link 1 -->
+            <a href="index.html" class="nav-link relative group text-msqDark font-medium hover:text-msqBlue transition-colors">
+                Home
+                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-msqBlue transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <!-- Nav Link 2 -->
+            <a href="products.html"class="nav-link relative group text-msqBlue font-medium transition-colors">
+            Products  <span class="absolute left-0 bottom-0 w-full h-0.5 bg-msqBlue transition-all duration-300"></span>
+            </a>
+
+            
+            <!-- Nav Link 3 -->
+            <a href="about.html" class="nav-link relative group text-msqDark font-medium hover:text-msqBlue transition-colors">
+                About Us
+                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-msqBlue transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            
+            <!-- Nav Link 4 -->
+            <a href="contact.html" class="nav-link relative group text-msqDark font-medium hover:text-msqBlue transition-colors">
+                Contact Us
+                <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-msqBlue transition-all duration-300 group-hover:w-full"></span>
+            </a>
+        </nav>
+
+        <!-- Right: Contact & Icons -->
+        <div class="hidden md:flex items-center">
+        
+            <a href="mailto:idea.msq@gmail.com" class="flex items-center gap-2 text-sm font-semibold text-msqBlue transition mr-8">
+                <i class="fas fa-envelope text-lg"></i>
+                idea.msq@gmail.com
+            </a>
+
+            <!-- Social Icons -->
+            <div class="flex space-x-4 text-msqGray">
+                <a href="#" class="hover:text-blue-600 hover:scale-110 transition-transform"><i class="fab fa-facebook-f text-lg"></i></a>
+                <a href="#" class="hover:text-pink-600 hover:scale-110 transition-transform"><i class="fab fa-instagram text-lg"></i></a>
+                <a href="#" class="hover:text-blue-800 hover:scale-110 transition-transform"><i class="fab fa-linkedin-in text-lg"></i></a>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Icon -->
+        <button class="md:hidden text-msqBlue text-2xl hover:scale-110 transition">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+    <!-- Main Section -->
+    <section class="py-32 bg-gray-50 min-h-screen">
+        <div class="container mx-auto px-6 md:px-12">
+            
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-msqBlue">Our Products</h2>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-10">
+                
+                <!-- LEFT SIDEBAR -->
+                <aside class="w-full lg:w-1/4 h-full">
+                    <div class="bg-white p-6 rounded-xl shadow-md sticky top-28 border border-gray-100">
+                        <div class="flex items-center gap-3 mb-6 border-b pb-4">
+                            <i class="fas fa-filter text-msqBlue"></i>
+                            <h3 class="text-xl font-bold text-msqBlue">Categories</h3>
+                        </div>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="#" class="category-link active block w-full px-4 py-3 text-msqDark hover:bg-gray-50 hover:text-msqBlue rounded-lg transition-all font-medium">
+                                    <i class="fas fa-th-large mr-2 text-sm"></i> All Products
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-link block w-full px-4 py-3 text-msqDark hover:bg-gray-50 hover:text-msqBlue rounded-lg transition-all font-medium">
+                                    <i class="fas fa-prescription-bottle mr-2 text-sm"></i> Pharma Grade
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-link block w-full px-4 py-3 text-msqDark hover:bg-gray-50 hover:text-msqBlue rounded-lg transition-all font-medium">
+                                    <i class="fas fa-first-aid mr-2 text-sm"></i> Medical
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-link block w-full px-4 py-3 text-msqDark hover:bg-gray-50 hover:text-msqBlue rounded-lg transition-all font-medium">
+                                    <i class="fas fa-tshirt mr-2 text-sm"></i> Textile
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- RIGHT PRODUCT GRID -->
+                <div class="w-full lg:w-3/4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
+                        
+                        <!-- Product 1: 60ml -->
+                        <div class="flip-card hover-trigger group h-[380px]">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front bg-white rounded-xl shadow-md p-4 flex flex-col items-center justify-center border border-gray-100">
+                                    <!-- Automatic Slider Container -->
+                                    <div class="auto-slider">
+                                         <img src="images/60mlamble.webp" alt="bottle view">
+                                        <img src="images/60mlamblewithcap.webp" alt=" bottle with cap">
+                                    </div>
+                                    <h3 class="text-xl font-bold text-msqBlue mb-1">Amble Bottle 60ml</h3>
+                                    <p class="text-gray-500 text-sm">Pharma Grade</p>
+                                </div>
+                                <div class="flip-card-back bg-msqBlue text-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center">
+                                    <h3 class="text-lg font-bold mb-4 border-b border-white/20 pb-2">Specs</h3>
+                                    <ul class="spec-list text-sm space-y-2 text-left w-full pl-4">
+                                        <li><span class="opacity-70">Weight:</span> <span class="font-bold">9 Grams</span></li>
+                                        <li><span class="opacity-70">Neck:</span> <span class="font-bold">25 mm</span></li>
+                                        <li><span class="opacity-70">Color:</span> <span class="font-bold">Amber/Milky</span></li>
+                                    </ul>
+                                    <a href="https://wa.me/923000000000?text=Hi, I am interested in Amble Bottle 60ml" target="_blank" class="btn-small-white mt-6 bg-white text-msqBlue px-5 py-2 rounded-full font-bold text-sm hover:bg-gray-100 transition flex items-center gap-2">
+                                        <i class="fab fa-whatsapp text-green-600 text-lg"></i> WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2: 120ml -->
+                        <div class="flip-card hover-trigger group h-[380px]">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front bg-white rounded-xl shadow-md p-4 flex flex-col items-center justify-center border border-gray-100">
+                                    <!-- Automatic Slider Container -->
+                                    <div class="auto-slider">
+                                        <img src="https://via.placeholder.com/200x200?text=120ml+Front" alt="Front View">
+                                        <img src="https://via.placeholder.com/200x200?text=120ml+Side" alt="Side View">
+                                        <img src="https://via.placeholder.com/200x200?text=120ml+Cap" alt="Cap View">
+                                    </div>
+                                    <h3 class="text-xl font-bold text-msqBlue mb-1">Amble Bottle 120ml</h3>
+                                    <p class="text-gray-500 text-sm">Pharma Grade</p>
+                                    <span class="hover-hint mt-4 text-msqBlue text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">View Specs <i class="fas fa-arrow-right ml-1"></i></span>
+                                </div>
+                                <div class="flip-card-back bg-msqBlue text-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center">
+                                    <h3 class="text-lg font-bold mb-4 border-b border-white/20 pb-2">Specs</h3>
+                                    <ul class="spec-list text-sm space-y-2 text-left w-full pl-4">
+                                        <li><span class="opacity-70">Weight:</span> <span class="font-bold">12 Grams</span></li>
+                                        <li><span class="opacity-70">Neck:</span> <span class="font-bold">25 mm</span></li>
+                                        <li><span class="opacity-70">Color:</span> <span class="font-bold">Amber/Milky</span></li>
+                                    </ul>
+                                    <a href="https://wa.me/923000000000?text=Hi, I am interested in Amble Bottle 120ml" target="_blank" class="btn-small-white mt-6 bg-white text-msqBlue px-5 py-2 rounded-full font-bold text-sm hover:bg-gray-100 transition flex items-center gap-2">
+                                        <i class="fab fa-whatsapp text-green-600 text-lg"></i> WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3: ORS -->
+                        <div class="flip-card hover-trigger group h-[380px]">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front bg-white rounded-xl shadow-md p-4 flex flex-col items-center justify-center border border-gray-100">
+                                    <!-- Automatic Slider Container -->
+                                    <div class="auto-slider">
+                                        <img src="https://via.placeholder.com/200x200?text=ORS+Full" alt="ORS View">
+                                        <img src="https://via.placeholder.com/200x200?text=ORS+Label" alt="Label View">
+                                        <img src="https://via.placeholder.com/200x200?text=ORS+Pack" alt="Pack View">
+                                    </div>
+                                    <h3 class="text-xl font-bold text-msqBlue mb-1">ORS Bottle 500ml</h3>
+                                    <p class="text-gray-500 text-sm">Medical</p>
+                                    <span class="hover-hint mt-4 text-msqBlue text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">View Specs <i class="fas fa-arrow-right ml-1"></i></span>
+                                </div>
+                                <div class="flip-card-back bg-msqBlue text-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center">
+                                    <h3 class="text-lg font-bold mb-4 border-b border-white/20 pb-2">Specs</h3>
+                                    <ul class="spec-list text-sm space-y-2 text-left w-full pl-4">
+                                        <li><span class="opacity-70">Vol:</span> <span class="font-bold">500 ml</span></li>
+                                        <li><span class="opacity-70">Material:</span> <span class="font-bold">PET</span></li>
+                                        <li><span class="opacity-70">Color:</span> <span class="font-bold">Clear</span></li>
+                                    </ul>
+                                    <a href="https://wa.me/923000000000?text=Hi, I am interested in ORS Bottle 500ml" target="_blank" class="btn-small-white mt-6 bg-white text-msqBlue px-5 py-2 rounded-full font-bold text-sm hover:bg-gray-100 transition flex items-center gap-2">
+                                        <i class="fab fa-whatsapp text-green-600 text-lg"></i> WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4: Clip -->
+                        <div class="flip-card hover-trigger group h-[380px]">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front bg-white rounded-xl shadow-md p-4 flex flex-col items-center justify-center border border-gray-100">
+                                    <!-- Automatic Slider Container -->
+                                    <div class="auto-slider">
+                                        <img src="https://via.placeholder.com/200x200?text=Clip+Top" alt="Clip View">
+                                        <img src="https://via.placeholder.com/200x200?text=Clip+Side" alt="Side View">
+                                        <img src="https://via.placeholder.com/200x200?text=Clip+Box" alt="Box View">
+                                    </div>
+                                    <h3 class="text-xl font-bold text-msqBlue mb-1">Shirt Clip</h3>
+                                    <p class="text-gray-500 text-sm">Textile</p>
+                                    <span class="hover-hint mt-4 text-msqBlue text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">View Specs <i class="fas fa-arrow-right ml-1"></i></span>
+                                </div>
+                                <div class="flip-card-back bg-msqBlue text-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center">
+                                    <h3 class="text-lg font-bold mb-4 border-b border-white/20 pb-2">Specs</h3>
+                                    <ul class="spec-list text-sm space-y-2 text-left w-full pl-4">
+                                        <li><span class="opacity-70">Mat:</span> <span class="font-bold">Crystal Plastic</span></li>
+                                        <li><span class="opacity-70">Pack:</span> <span class="font-bold">1000 pcs</span></li>
+                                        <li><span class="opacity-70">Grip:</span> <span class="font-bold">High Elastic</span></li>
+                                    </ul>
+                                    <a href="https://wa.me/923000000000?text=Hi, I am interested in Shirt Clip" target="_blank"
+                                     class="btn-small-white mt-6 bg-white text-msqBlue px-5 py-2 rounded-full font-bold text-sm hover:bg-gray-100 transition flex items-center gap-2">
+                                        <i class="fab fa-whatsapp text-green-600 text-lg"></i> WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
